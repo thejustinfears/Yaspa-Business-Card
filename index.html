@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Justin Fears | Yaspa Review Card</title>
+<style>
+  :root {
+    --bg1:#171129; --bg2:#5f43f2; --violet:#6f55ff; --violet2:#8a6bff; --ink:#161625;
+    --muted:#667085; --card:rgba(255,255,255,.94); --line:rgba(111,85,255,.14); --white:#fff;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink); padding:18px;
+    background:radial-gradient(circle at top left, rgba(138,107,255,.32), transparent 28%),
+               radial-gradient(circle at bottom right, rgba(111,85,255,.26), transparent 24%),
+               linear-gradient(160deg, var(--bg1), #251b44 45%, var(--bg2));
+  }
+  .wrap { width:min(100%, 430px); margin:0 auto; }
+  .card { background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,247,255,.93)); border-radius:34px; overflow:hidden; box-shadow:0 28px 72px rgba(13,10,28,.35); border:1px solid rgba(255,255,255,.35); }
+  .hero { padding:20px 20px 86px; background:linear-gradient(135deg,#5b3ff0,#7f64ff); color:white; position:relative; }
+  .hero::after { content:''; position:absolute; left:0; right:0; bottom:0; height:100px; background:linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,.94)); }
+  .top { position:relative; z-index:1; display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+  .logo-box { width:136px; padding:10px; border-radius:16px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); }
+  .logo-box img { width:100%; display:block; border-radius:10px; }
+  .pill { padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.15); font-size:.8rem; font-weight:700; white-space:nowrap; }
+  .hero-copy { position:relative; z-index:1; margin-top:18px; max-width:320px; }
+  .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:.76rem; font-weight:800; opacity:.8; }
+  .hero h2 { margin:10px 0 0; font-size:1.45rem; line-height:1.08; letter-spacing:-.03em; }
+  .hero p { margin:10px 0 0; line-height:1.5; font-size:.95rem; color:rgba(255,255,255,.92); }
+  .profile-wrap { margin-top:-68px; padding:0 18px; position:relative; z-index:2; }
+  .profile { background:white; border-radius:28px; padding:18px; box-shadow:0 12px 32px rgba(37,28,82,.14); }
+  .profile-top { display:grid; grid-template-columns:104px 1fr; gap:16px; align-items:center; }
+  .avatar { width:104px; height:104px; border-radius:26px; object-fit:cover; object-position:center 20%; border:4px solid rgba(255,255,255,.94); box-shadow:0 16px 30px rgba(36,26,82,.18); }
+  h1 { margin:0; font-size:1.75rem; line-height:1.03; letter-spacing:-.04em; }
+  .role { margin-top:6px; font-size:.98rem; font-weight:700; color:#403c63; }
+  .company { display:inline-flex; margin-top:10px; padding:7px 12px; border-radius:999px; background:rgba(111,85,255,.1); color:#4c34c8; font-weight:800; font-size:.82rem; }
+  .details { display:grid; gap:10px; margin-top:16px; }
+  .detail { display:grid; grid-template-columns:30px 1fr; gap:10px; padding:11px 12px; border-radius:16px; background:rgba(111,85,255,.04); border:1px solid var(--line); font-size:.94rem; line-height:1.45; }
+  .icon { width:30px; height:30px; display:grid; place-items:center; border-radius:10px; background:rgba(111,85,255,.1); color:#4c34c8; }
+  .detail a { color:#2c47d9; text-decoration:none; }
+  .section { padding:0 18px 18px; }
+  .panel { background:rgba(255,255,255,.9); border-radius:24px; padding:18px; border:1px solid rgba(111,85,255,.08); box-shadow:0 10px 24px rgba(37,28,82,.08); }
+  .panel h2 { margin:0; font-size:1.05rem; }
+  .panel p { margin:8px 0 0; color:var(--muted); font-size:.92rem; line-height:1.5; }
+  .actions { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .btn, .btnlink { appearance:none; border:0; text-decoration:none; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 16px; border-radius:16px; font:inherit; font-weight:800; text-align:center; }
+  .btn.primary, .btnlink.primary { background:linear-gradient(135deg,var(--violet),var(--violet2)); color:white; box-shadow:0 12px 24px rgba(111,85,255,.28); }
+  .btn.secondary, .btnlink.secondary { background:#f3f4fa; color:#2b3243; }
+  .full { grid-column:1 / -1; }
+  .socials { display:grid; gap:10px; margin-top:16px; }
+  .social { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:14px 15px; border-radius:16px; text-decoration:none; color:var(--ink); background:rgba(111,85,255,.05); border:1px solid var(--line); }
+  .social.personal { background:rgba(22,22,37,.04); }
+  .social span { font-weight:700; }
+  .social strong { color:#4c34c8; font-size:.9rem; }
+  .foot { padding:0 18px 20px; color:rgba(255,255,255,.85); font-size:.8rem; line-height:1.45; text-align:center; }
+  .modalback { position:fixed; inset:0; display:none; align-items:flex-end; justify-content:center; padding:14px; background:rgba(10,8,23,.56); backdrop-filter:blur(10px); }
+  .modalback.show { display:flex; }
+  .modal { width:min(100%,430px); background:rgba(255,255,255,.98); border-radius:28px 28px 22px 22px; padding:18px; box-shadow:0 24px 70px rgba(12,8,24,.35); }
+  .mh { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+  .mh h3 { margin:0; font-size:1.08rem; }
+  .mh p { margin:6px 0 0; color:var(--muted); font-size:.9rem; line-height:1.45; }
+  .close { width:38px; height:38px; border-radius:12px; background:#f2f4fa; color:#1f2433; }
+  .fields { display:grid; gap:10px; margin-top:14px; }
+  input { width:100%; padding:13px 14px; border-radius:14px; border:1px solid #dddff0; font:inherit; }
+  .status { min-height:1.3em; margin-top:10px; color:#3046d5; font-size:.9rem; font-weight:700; }
+  @media (max-width:390px) { .profile-top{grid-template-columns:88px 1fr;align-items:start;} .avatar{width:88px;height:88px;border-radius:22px;object-position:center 20%;} .actions{grid-template-columns:1fr;} h1{font-size:1.55rem;} }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="hero">
+        <div class="top">
+          <div class="logo-box"><img src="images/yaspa-logo.png" alt="Yaspa logo" /></div>
+          <div class="pill">Instant bank payments</div>
+        </div>
+        <div class="hero-copy">
+          <p>Award-winning instant bank payments from Yaspa. Real-time pay-ins and payouts | Account verification | Financial health | Available across the US, UK and Europe today</p>
+        </div>
+      </div>
+
+      <div class="profile-wrap">
+        <div class="profile">
+          <div class="profile-top">
+            <img class="avatar" src="images/justin-fears.jpg" alt="Justin Fears" />
+            <div>
+              <h1>Justin Fears</h1>
+              <div class="role">US Director Enterprise Sales</div>
+              <div class="company">Yaspa</div>
+            </div>
+          </div>
+          <div class="details">
+            <div class="detail"><div class="icon">✉</div><div><a href="mailto:justin.fears@yaspa.com">justin.fears@yaspa.com</a></div></div>
+            <div class="detail"><div class="icon">☎</div><div><a href="tel:+19492263334">+1 949-226-3334</a></div></div>
+            <div class="detail"><div class="icon">⌂</div><div>1175 Peachtree St NE, Suite 1000, Atlanta, GA 30361</div></div>
+            <div class="detail"><div class="icon">↗</div><div><a href="https://www.yaspa.com" target="_blank" rel="noreferrer">www.yaspa.com</a></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="actions">
+            <button class="btn primary full" id="shareLeadBtn">Share your contact info</button>
+            <button class="btn primary" id="saveContactBtn">Save contact (.vcf)</button>
+            <a class="btnlink primary" href="https://meetings.hubspot.com/justin-fears1" target="_blank" rel="noreferrer">Book a meeting</a>
+            <a class="btnlink primary full" href="mailto:justin.fears@yaspa.com">Email Justin</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <h2>Connect with Yaspa</h2>
+          <p>Official Yaspa social channels plus Justin's personal LinkedIn.</p>
+          <div class="socials">
+            <a class="social" href="https://www.linkedin.com/company/yaspa" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>Open</strong></a><a class="social" href="https://www.instagram.com/yaspahq/" target="_blank" rel="noreferrer"><span>Instagram</span><strong>Open</strong></a><a class="social" href="https://www.youtube.com/@Yaspa_hq" target="_blank" rel="noreferrer"><span>YouTube</span><strong>Open</strong></a><a class="social" href="https://x.com/YaspaHQ" target="_blank" rel="noreferrer"><span>X / Twitter</span><strong>Open</strong></a>
+            <a class="social personal" href="https://www.linkedin.com/in/justin-fears-52b31b72/" target="_blank" rel="noreferrer"><span>Justin LinkedIn</span><strong>Open</strong></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="foot">Yaspa digital business card – lead form routed to <a href="mailto:justin.fears@yaspa.com">justin.fears@yaspa.com</a>.</div>
+  </main>
+
+  <div class="modalback" id="leadModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
+      <div class="mh">
+        <div>
+          <h3 id="leadTitle">Share your contact info</h3>
+          <p>Enter your details and tap send. This creates a prefilled email to <a href="mailto:justin.fears@yaspa.com">justin.fears@yaspa.com</a> while keeping the Yaspa branding and signature on the card.</p>
+        </div>
+        <button class="btn close" id="closeModalBtn" aria-label="Close">×</button>
+      </div>
+      <div class="fields">
+        <input id="firstName" type="text" placeholder="First name" />
+        <input id="lastName" type="text" placeholder="Last name" />
+        <input id="companyName" type="text" placeholder="Company" />
+        <input id="phoneNumber" type="tel" placeholder="Phone" />
+        <input id="emailAddress" type="email" placeholder="Email" />
+        <button class="btn primary" id="submitLeadBtn">Send to Justin</button>
+        <button class="btn secondary" id="copyLeadBtn">Copy details</button>
+        <div class="status" id="statusMsg"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+const vcard = 'BEGIN:VCARD\nVERSION:3.0\nFN:Justin Fears\nN:Fears;Justin;;;\nTITLE:US Director Enterprise Sales\nORG:Yaspa\nEMAIL;TYPE=WORK:justin.fears@yaspa.com\nTEL;TYPE=WORK,VOICE:+1 949-226-3334\nADR;TYPE=WORK:;;1175 Peachtree St NE, Suite 1000;Atlanta;GA;30361;USA\nURL:https://www.yaspa.com\nURL;TYPE=WORK:https://meetings.hubspot.com/justin-fears1\nEND:VCARD';
+const leadModal = document.getElementById('leadModal');
+const statusMsg = document.getElementById('statusMsg');
+
+function setStatus(message) { statusMsg.textContent = message; }
+function openModal() { leadModal.classList.add('show'); setStatus(''); document.getElementById('firstName').focus(); }
+function closeModal() { leadModal.classList.remove('show'); }
+
+async function saveVCardFile() {
+  const filename = 'Justin-Fears-Yaspa.vcf';
+  const mime = 'text/vcard;charset=utf-8';
+  const blob = new Blob([vcard], { type: mime });
+  const file = new File([blob], filename, { type: 'text/vcard' });
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent || '');
+
+  if (isMobile && navigator.canShare && navigator.share) {
+    try {
+      if (navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: 'Justin Fears contact card' });
+        return;
+      }
+    } catch (err) {}
+  }
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.rel = 'noopener';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  if (isMobile) {
+    setTimeout(() => { if (!document.hidden) window.open(url, '_blank', 'noopener'); }, 500);
+  }
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+}
+
+function fields() {
+  return {
+    first: document.getElementById('firstName').value.trim(),
+    last: document.getElementById('lastName').value.trim(),
+    company: document.getElementById('companyName').value.trim(),
+    phone: document.getElementById('phoneNumber').value.trim(),
+    email: document.getElementById('emailAddress').value.trim()
+  };
+}
+
+function leadText() {
+  const f = fields();
+  const fullName = [f.first, f.last].filter(Boolean).join(' ');
+  return [
+    'Prospect contact details for Justin Fears / Yaspa',
+    fullName ? `Name: ${fullName}` : '',
+    f.company ? `Company: ${f.company}` : '',
+    f.phone ? `Phone: ${f.phone}` : '',
+    f.email ? `Email: ${f.email}` : ''
+  ].filter(Boolean).join('\n');
+}
+
+document.getElementById('shareLeadBtn').addEventListener('click', openModal);
+document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+leadModal.addEventListener('click', (e) => { if (e.target === leadModal) closeModal(); });
+document.getElementById('saveContactBtn').addEventListener('click', async () => { await saveVCardFile(); });
+
+document.getElementById('submitLeadBtn').addEventListener('click', () => {
+  const f = fields();
+  if ([f.first, f.last, f.company, f.phone, f.email].some(v => !v)) {
+    setStatus('Please complete first name, last name, company, phone, and email.');
+    return;
+  }
+  const subject = encodeURIComponent(`New prospect contact: ${f.first} ${f.last}`);
+  const body = encodeURIComponent(leadText());
+  window.location.href = `mailto:justin.fears@yaspa.com?subject=${subject}&body=${body}`;
+  setStatus('Success: your submission is ready in your email app. Tap Send to deliver it to Justin.');
+});
+
+document.getElementById('copyLeadBtn').addEventListener('click', async () => {
+  const text = leadText();
+  if (!text.includes('Name:')) {
+    setStatus('Please complete the form before copying the details.');
+    return;
+  }
+  try {
+    await navigator.clipboard.writeText(text);
+    setStatus('Details copied to clipboard.');
+  } catch (err) {
+    setStatus('Copy failed on this device. Try Send to Justin instead.');
+  }
+});
+</script>
+</body>
+</html>
